@@ -3,7 +3,7 @@
 AI assistant in "chat" and "text modes, includes Token Counting, Context Window Usage, RPM &amp; RPD &amp; TPM Limits and API Request handling.
 "Chat" mode remembers the conversation history, however "Text" mode can not.
 
-### --------**** Samples and Test Cases are shown at the end of the page. ****--------
+### ------------------------ Samples and Test Cases are shown at the end of the page. ------------------------
 
 ## Importing Libraries
 ```ruby
@@ -170,16 +170,16 @@ try:
 
 # Samples and Test Cases
 
-*  ("Chat" Mode: Remembers chat history)
+*  ## ("Chat" Mode: Remembers chat history)
  ![image](https://github.com/user-attachments/assets/e4340f4d-5e3f-4123-988a-d030e6a2660f)
 
-* ("Text" Mode: Can't access chat history)
+* ## ("Text" Mode: Can't access chat history)
   ![image](https://github.com/user-attachments/assets/e0f4dece-25ea-4089-8da2-af42da5487c9)
-* (Rate Limit Test: 2 RPM Usage)
+* ## (Rate Limit Test: 2 RPM Usage)
 ![image](https://github.com/user-attachments/assets/d017e712-4e96-43d3-8710-894efa9ebb98)
-* (Rate Limit Test: 50 RPD Usage)
+* ## (Rate Limit Test: 50 RPD Usage)
 ![image](https://github.com/user-attachments/assets/1f99300e-db5d-4744-822b-08874996ddc6)
-* (Code: 429 Too Many Requests API Error handling)
+* ## (Code: 429 Too Many Requests API Error handling)
 ![image](https://github.com/user-attachments/assets/00290891-c726-4142-bee6-1e516682e4e9)
 
 
