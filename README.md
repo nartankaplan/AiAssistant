@@ -49,6 +49,52 @@ request_count_per_day = 0
 token_count_per_minute = 0
 last_request_time = time.time() #Records the time of the last request
 ```
+## Token counting (pseudo)
+```ruby
+DEFINE FUNCTION calculate_context_window_tokens(system_instruction, input, response)
+    system_instruction_tokens = model.count_tokens(system_instruction)
+    input_tokens = model.count_tokens(input)
+    response_tokens = response.usage_metadata.total_token_count
+    context_window_tokens = system_instruction_tokens + input_tokens + response_tokens
+    RETURN context_window_tokens
+END FUNCTION
+```
+## "Chat" vs "Text" Mode (pseudo)
+```ruby
+try:
+    if mode == "text":
+        response = model.generate_content(prompt)
+        if not response or not response.text:
+            raise ValueError("Received an empty response from the model.")
+        response_text = response.text
+    else:
+        response = chat_session.send_message(prompt, stream=False)  # Receive response directly
+        if not response or not response.parts:
+            raise ValueError("Chat response is empty or invalid.")
+        response_text = response.parts[0].text  # Get the first part
+
+```
+## Context Usage (pseudo)
+```ruby
+FUNCTION check_context_window_usage(input, response)
+    input_tokens = model.count_tokens(input)
+    response_tokens = response.usage_metadata.total_token_count
+    context_window_tokens = input_tokens + response_tokens
+
+    PRINT "➡️ Context Window Usage:", context_window_tokens, "/", MAX_CONTEXT_TOKENS, "tokens"
+
+    IF context_window_tokens > (MAX_CONTEXT_TOKENS * WARNING_THRESHOLD) THEN
+        PRINT "⚠️ Warning: Context window token count is", context_window_tokens,
+              "approaching", (WARNING_THRESHOLD * 100), "% of the limit!"
+    END IF
+END FUNCTION
+
+```
+
+
+
+
+
 ## Handling the rate limits
 
 1-) Resets counters every minute.
