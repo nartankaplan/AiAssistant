@@ -220,7 +220,7 @@ try:
  ![image](https://github.com/user-attachments/assets/e4340f4d-5e3f-4123-988a-d030e6a2660f)
 
 * ## ("Text" Mode: Can't access chat history)
-  ![image](https://github.com/user-attachments/assets/e0f4dece-25ea-4089-8da2-af42da5487c9)
+![image](https://github.com/user-attachments/assets/e0f4dece-25ea-4089-8da2-af42da5487c9)
 * ## (Rate Limit Test: 2 RPM Usage)
 ![image](https://github.com/user-attachments/assets/d017e712-4e96-43d3-8710-894efa9ebb98)
 * ## (Rate Limit Test: 50 RPD Usage)
