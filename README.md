@@ -3,7 +3,7 @@
 AI assistant in "chat" and "text modes, includes Token Counting, Context Window Usage, RPM &amp; RPD &amp; TPM Limits and API Request handling.
 "Chat" mode remembers the conversation history, however "Text" mode can not.
 
-### ----------------- Samples and Test Cases are shown at the end of the page. --------------------
+### ----------------- Samples and Test Cases are shown at the end of the page. ------------------
 
 ## Importing Libraries
 ```ruby
